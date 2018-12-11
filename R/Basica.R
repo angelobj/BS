@@ -52,12 +52,11 @@ basica<-function(x,aprox=T,n=3){
 '%!in%' <- function(x,y)!('%in%'(x,y))
 cargar<-function(dec=".",sep=";",...){
   fn<-file.choose()
-  ext<-getExt(fn)
+  ext<-tools::getExt(fn)
   if(ext %!in% c("","csv","txt","xls","xlsx")){stop("Debes seleccionar un archivo con extensión apropiada (csv,txt,xls,xlsx)")}
   if(ext=="xlsx"){
-    library(readxl)
-    dat<-read_excel(fn)}else{
-      dat<-read.table(fn,dec=dec,sep=sep,...)
+    dat<-readxl::read_excel(fn)}else{
+    dat<-read.table(fn,dec=dec,sep=sep,...)
     }
   warning(paste("Archivo seleccionado: ",fn))
   View(dat)
