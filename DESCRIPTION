@@ -4,8 +4,7 @@ Title: Estadística Básica
 Version: 0.1.0
 Author: Angelo Bartsch
 Maintainer: The package maintainer <angelo.bartsch@uv.cl>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Algunas funciones básicas para análisis estadístico
 License: No license
 Depends: R (>= 3.1.0), readxl
 Encoding: UTF-8
