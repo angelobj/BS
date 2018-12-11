@@ -52,7 +52,7 @@ basica<-function(x,aprox=T,n=3){
 '%!in%' <- function(x,y)!('%in%'(x,y))
 cargar<-function(dec=".",sep=";",...){
   fn<-file.choose()
-  ext<-tools::getExt(fn)
+  ext<-getExt(fn)
   if(ext %!in% c("","csv","txt","xls","xlsx")){stop("Debes seleccionar un archivo con extensión apropiada (csv,txt,xls,xlsx)")}
   if(ext=="xlsx"){
     dat<-readxl::read_excel(fn)}else{
