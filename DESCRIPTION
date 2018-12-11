@@ -1,11 +1,14 @@
 Package: BS
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Estadística Básica
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Author: Angelo Bartsch
+Maintainer: The package maintainer <angelo.bartsch@uv.cl>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: No license
+Depends: R (>= 3.1.0), readxl
 Encoding: UTF-8
 LazyData: true
+NeedsCompilation: no
+Packaged: 2018-12-11 18:11:19 UTC; angelobj
