@@ -42,7 +42,7 @@ getExt <- function(file){
 }
 
 basica<-function(x,aprox=T,n=3){
-  if(aprox){warning("Tabla aproximada con 2 decimales. n=número de decimales")}
+  if(aprox&n==3){warning("Tabla aproximada con 3 decimales. n=número de decimales")}
   res<-data.frame("m"=mean(x),"sd"=sd(x),"var"=var(x),
                   "min"=min(x),"max"=max(x),"skew"=skewness(x),"kurtosis"=kurtosis(x),
                   "shapiro"=shapiro.test(x)$p.value)
