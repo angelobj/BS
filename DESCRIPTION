@@ -6,7 +6,7 @@ Author: Angelo Bartsch
 Maintainer: The package maintainer <angelo.bartsch@uv.cl>
 Description: Algunas funciones básicas para análisis estadístico
 License: Sin licencia
-Depends: R (>= 3.3.1), readxl
+Depends: R (>= 3.3.1), readxl,svDialogs
 Encoding: UTF-8
 LazyData: true
 NeedsCompilation: no
