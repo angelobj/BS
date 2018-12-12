@@ -77,3 +77,34 @@ tabla<-function(x,k=NULL){
   return(data.frame(cbind(ni,fi,Ni,Fi)))}
 
 
+gr<-function(x){
+type<-dlg_list(c("plot","hist","qqnorm"), preselect = "plot", multiple = FALSE, title = "Selecciona el tipo de gráfico:\n 1.- plot: Gráfico de puntos \n 2.- hist: Histograma de frecuencias \n 3.- qqnorm: Grafico cuantil cuantil\n",
+         gui = .GUI)$res
+main <- svDialogs::dlgInput("Título del gráfico:\n")$res
+xlab<-svDialogs::dlgInput("Nombre del eje X:\n")$res
+ylab<-svDialogs::dlgInput("Nombre del eje Y:\n")$res
+if(type=="hist"){args=", freq=F"}else{args=""}
+
+eval(parse(text=paste0(type,"(",deparse(substitute(x)),
+                       ", main= '",main,
+                       "' ,xlab= '",xlab,
+                       "', ylab= '",ylab,"'",args,")")))
+
+
+if(type=="qqnorm"){
+  line<-paste0("qqline(",deparse(substitute(x)),",col='red')")
+  qqline(x,col="red")
+}
+else if(type=="hist"){
+  line<-paste0("lines(density(",deparse(substitute(x)),"),col='red')")
+  lines(density(x),col="red")
+}
+else{line<-""}
+
+cat("Puedes obtener el mismo gráfico con la siguiente función:\n",type,"(",deparse(substitute(x)),
+    ", \n main= '",main,
+    "', \n xlab= '",xlab,
+    "', \n ylab= '",ylab,"' ",args,")\n",line,sep="")
+
+#plot(x,main=main,xlab=xlab,ylab=ylab)
+}
